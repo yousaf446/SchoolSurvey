@@ -1,0 +1,24 @@
+<div style="text-align:center">
+    <h4>Thank you very much for filling in this survey.
+    If you would like to know more about our project, please follow us on Twitter
+    (<b>@TeachersRateSch</b>) or leave your email address for occasional updates.</h4>
+    <input type="text" ng-model="email" class="control-label" />
+    <hr/>
+    <h4>What do you think about the length of this survey?</h4>
+    <ul class="list-unstyled">
+    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-class="opinion == 5 ? 'btn-danger': 'btn-default'" ng-click="opinion=5">Far Too Many Questions</button></li></div>
+
+    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-class="opinion == 4 ? 'btn-danger': 'btn-default'" ng-click="opinion=4">Too Many Questions</button></li></div>
+
+    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-class="opinion == 3 ? 'btn-danger': 'btn-default'" ng-click="opinion=3">Right number of questions</button></li></div>
+
+    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-class="opinion == 2 ? 'btn-danger': 'btn-default'" ng-click="opinion=2">Too Few Questions</button></li></div>
+
+    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-class="opinion == 1 ? 'btn-danger': 'btn-default'" ng-click="opinion=1">Far Too Few Questions</button></li></div>
+
+    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-class="opinion == 0 ? 'btn-danger': 'btn-default'" ng-click="opinion=0">No opinion</button></li></div>
+
+    </ul>
+
+    <a href="#/thankyou" class="btn btn-danger"> >> </a>
+</div>

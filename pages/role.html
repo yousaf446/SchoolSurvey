@@ -1,25 +1,27 @@
+<div style="text-align: center">
 <h4><strong>What is your role at your school?</strong><span>(can choose more than one)</span></h4>
 <ul class="list-unstyled">
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block">Teacher (Full Time)</button></li></div>
+    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="ft=false" ng-class="ft ? 'btn-danger' : 'btn-default'" ng-click="ft = (ft == true ? false : true)">Teacher (Full Time)</button></li></div>
 
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block">Teacher (Part Time)</button></li></div>
+    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block" ng-init="pt=false" ng-class="pt ? 'btn-danger' : 'btn-default'" ng-click="pt = (pt == true ? false : true)">Teacher (Part Time)</button></li></div>
 
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block">Teacher Assistant/ Support Assistant</button></li></div>
+    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block" ng-init="ta=false" ng-class="ta ? 'btn-danger' : 'btn-default'" ng-click="ta = (ta == true ? false : true)">Teacher Assistant/ Support Assistant</button></li></div>
 
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block">Senior Management</button></li></div>
+    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block" ng-init="sm=false" ng-class="sm ? 'btn-danger' : 'btn-default'" ng-click="sm = (sm == true ? false : true)">Senior Management</button></li></div>
 
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block">Head of Year / Department / Faculty</button></li></div>
+    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="hod=false" ng-class="hod ? 'btn-danger' : 'btn-default'" ng-click="hod = (hod == true ? false : true)">Head of Year / Department / Faculty</button></li></div>
 
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block">Mentor</button></li></div>
+    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="mentor=false" ng-class="mentor ? 'btn-danger' : 'btn-default'" ng-click="mentor = (mentor == true ? false : true)">Mentor</button></li></div>
 
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block">Administrative</button></li></div>
+    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="admin=false" ng-class="admin ? 'btn-danger' : 'btn-default'" ng-click="admin = (admin == true ? false : true)">Administrative</button></li></div>
 
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block">Premises</button></li></div>
+    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="prem=false" ng-class="prem ? 'btn-danger' : 'btn-default'" ng-click="prem = (prem == true ? false : true)">Premises</button></li></div>
 
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block">Others (Please State)</button></li>
+    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="other=false" ng-class="other ? 'btn-danger' : 'btn-default'" ng-click="other = (other == true ? false : true)">Others (Please State)</button></li>
     <input type="text" class="form-control" ng-model="roleOther" /></div>
 
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block">I don't work at a school</button></li></div>
+    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="na=false" ng-class="na ? 'btn-danger' : 'btn-default'" ng-click="na = (na == true ? false : true)">I don't work at a school</button></li></div>
 
     <a href="#/personal" class="btn btn-danger"> >> </a>
 </ul>
+</div>
