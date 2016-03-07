@@ -1,5 +1,9 @@
-<div class="form-group">
-    <label>Your School</label>
-    <input type="text" class="form-control" ng-model="school" placeholder="Please Enter Your School">
+<div align="center">
+    <form name="schoolForm" action="#/role" method="POST">
+        <div class="form-group">
+            <label>Your School</label>
+            <input type="text" class="form-control" ng-model="school" name="school" required placeholder="Please Enter Your School">
+        </div>
+        <input type="submit" class="btn btn-danger" value=">>" />
+    </form>
 </div>
-<div align="center"><a href="#/role" class="btn btn-danger"> >> </a></div>

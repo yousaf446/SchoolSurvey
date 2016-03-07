@@ -3,7 +3,7 @@ require.config({
         'domReady': 'lib/domReady/domReady',
         'angular': 'lib/angular/angular',
         'angular-route': 'lib/angular-route/angular-route',
-        'angular-messages': 'lib/angular-route/angular-messages',
+        'angular-messages': 'lib/angular-messages/angular-messages',
         'coreModule': 'coreModule'
     },
 

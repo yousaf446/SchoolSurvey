@@ -2,21 +2,30 @@ define(function() {
     var coreModule = angular.module('coreModule');
     coreModule.controller('mainController', ['$scope', function($scope) {
         $scope.options = [
-            {   value: 1  },
-            {   value: 2  },
-            {   value: 3 },
-            {   value: 4   },
-            {   value: 5   },
-            {   value: 0    }
-        ];
-
-        $scope.optionsName = [
-            {   value: 'Strongly agree'  },
-            {   value: 'Agree'  },
-            {   value: 'Neither agree nor disagree' },
-            {   value: 'Disagree'   },
-            {   value: 'Strongly disagree'   },
-            {   value: 'N/A'    }
+            {
+                name: 'Strongly agree',
+                value: 1,
+            },
+            {
+                name: 'Agree',
+                value: 2,
+            },
+            {
+                name: 'Neither agree nor disagree',
+                value: 3,
+            },
+            {
+                name: 'Disagree',
+                value: 4,
+            },
+            {
+                name: 'Strongly disagree',
+                value: 5,
+            },
+            {
+                name: 'N/A',
+                value: 0,
+            }
         ];
     }]);
 });

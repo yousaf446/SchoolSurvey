@@ -1,31 +1,131 @@
 <div align="center">
-<h3>The following statements relate to your <strong>overall belief and confidence</strong> in your school</h3>
-
-<table class="table table-condensed">
+<div class="table-responsive">
+    <h4 style="text-align:inherit">The following statements relate to your <strong>overall belief and confidence</strong> in your school</h4>
+<table class="table table-condensed" style="width:60%">
     <tbody>
     <tr>
-    <th></th>
-    <th ng-repeat="option in optionsName">
-        {{ option.value }}
+    <th style="width:28%"></th>
+    <th style="width:12%" ng-repeat="option in options">
+        {{ option.name }}
     </th>
     </tr>
     <tr>
-        <th><h4>I would be happy if my children attended a school like this one</h4></th>
-        <td ng-repeat="option in options">
+        <th style="width:28%"><h5>I would be happy if my children attended a school like this one</h5></th>
+        <td style="width:12%" ng-repeat="option in options">
             <div class="radio radio-danger radio-inline">
-                <input type="radio" ng-model="q1" name="q1" id="q1" value="{{ option.value }}" />
+                <input type="radio" ng-model="q11" name="q11" id="q11" value="{{ option.value }}" />
             </div>
         </td>
     </tr>
 
     <tr>
-        <th><h4>I would advise my friends to send their children to this school</h4></th>
-        <td ng-repeat="option in options">
+        <th style="width:28%"><h5>I would advise my friends to send their children to this school</h5></th>
+        <td style="width:12%" ng-repeat="option in options">
             <div class="radio radio-danger radio-inline">
-                <input type="radio" ng-model="q2" name="q2" id="q2" value="{{ option.value }}" />
+                <input type="radio" ng-model="q12" name="q12" id="q12" value="{{ option.value }}" />
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <th style="width:28%"><h5>My role in this school makes a significant and positive difference</h5></th>
+        <td style="width:12%" ng-repeat="option in options">
+            <div class="radio radio-danger radio-inline">
+                <input type="radio" ng-model="q13" name="q13" id="q13" value="{{ option.value }}" />
             </div>
         </td>
     </tr>
     </tbody>
 </table>
+</div>
+<div class="table-responsive">
+<h4 style="text-align:inherit">The following statements relate to <strong>professional trust</strong> at your school</h4>
+        <table class="table table-condensed" style="width:60%">
+            <tbody>
+            <tr>
+                <th style="width:28%"></th>
+                <th style="width:12%" ng-repeat="option in options">
+                    {{ option.name }}
+                </th>
+            </tr>
+            <tr>
+                <th style="width:28%"><h5>I am trusted to teach the way I want</h5></th>
+                <td style="width:12%" ng-repeat="option in options">
+                    <div class="radio radio-danger radio-inline">
+                        <input type="radio" ng-model="q21" name="q21" id="q21" value="{{ option.value }}" />
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th style="width:28%"><h5>Management overly interferes with my day-to-day work</h5></th>
+                <td style="width:12%" ng-repeat="option in options">
+                    <div class="radio radio-danger radio-inline">
+                        <input type="radio" ng-model="q22" name="q22" id="q22" value="{{ option.value }}" />
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th style="width:28%"><h5>I am trusted in how I choose to spend my working hours</h5></th>
+                <td style="width:12%" ng-repeat="option in options">
+                    <div class="radio radio-danger radio-inline">
+                        <input type="radio" ng-model="q23" name="q23" id="q23" value="{{ option.value }}" />
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th style="width:28%"><h5>I feel heavily pressured by school accountability measures</h5></th>
+                <td style="width:12%" ng-repeat="option in options">
+                    <div class="radio radio-danger radio-inline">
+                        <input type="radio" ng-model="q24" name="q24" id="q24" value="{{ option.value }}" />
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-responsive">
+        <h4 style="text-align:inherit"> The following statements relate to <strong>staff morale </strong>at your school </h4>
+        <table class="table table-condensed" style="width:60%">
+            <tbody>
+            <tr>
+                <th style="width:28%"></th>
+                <th style="width:12%" ng-repeat="option in options">
+                    {{ option.name }}
+                </th>
+            </tr>
+            <tr>
+                <th style="width:28%"><h5>There is a positive atmosphere amongst staff at my school</h5></th>
+                <td style="width:12%" ng-repeat="option in options">
+                    <div class="radio radio-danger radio-inline">
+                        <input type="radio" ng-model="q31" name="q31" id="q31" value="{{ option.value }}" />
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th style="width:28%"><h5>I am happy working at my school</h5></th>
+                <td style="width:12%" ng-repeat="option in options">
+                    <div class="radio radio-danger radio-inline">
+                        <input type="radio" ng-model="q32" name="q32" id="q32" value="{{ option.value }}" />
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th style="width:28%"><h5>My colleagues are happy in their jobs</h5></th>
+                <td style="width:12%" ng-repeat="option in options">
+                    <div class="radio radio-danger radio-inline">
+                        <input type="radio" ng-model="q33" name="q33" id="q33" value="{{ option.value }}" />
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a href="#/behaviour" class="btn btn-danger"> >> </a>
 </div>

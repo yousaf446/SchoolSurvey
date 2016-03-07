@@ -1,5 +1,8 @@
-define(['angular-route'], function() {
-    var coreModule = angular.module('coreModule', ['ngRoute']);
+define([
+    'angular-route',
+    'angular-messages'
+], function() {
+    var coreModule = angular.module('coreModule', ['ngRoute', 'ngMessages']);
 
     require(['js/controllers/controllerReference'], function(controllerReference) {
         require(controllerReference, function() {
@@ -32,6 +35,16 @@ define(['angular-route'], function() {
 
             .when('/personal', {
                 templateUrl: 'pages/personal.html',
+                controller: 'mainController'
+            })
+
+            .when('/behaviour', {
+                templateUrl: 'pages/behaviour.html',
+                controller: 'mainController'
+            })
+
+            .when('/quality', {
+                templateUrl: 'pages/quality.html',
                 controller: 'mainController'
             })
     }]);
