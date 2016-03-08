@@ -14,39 +14,48 @@ define([
         $routeProvider
 
             .when('/', {
-                templateUrl: 'pages/home.html'
+                templateUrl: 'pages/home.html',
+                controller: 'mainController'
             })
 
             .when('/name', {
-                templateUrl: 'pages/name.html'
+                templateUrl: 'pages/name.html',
+                controller: 'nameController'
             })
 
             .when('/school', {
-                templateUrl: 'pages/school.html'
+                templateUrl: 'pages/school.html',
+                controller: 'schoolController'
             })
 
             .when('/role', {
-                templateUrl: 'pages/role.html'
+                templateUrl: 'pages/role.html',
+                controller: 'roleController'
             })
 
             .when('/personal', {
-                templateUrl: 'pages/personal.html'
+                templateUrl: 'pages/personal.html',
+                controller: 'personalController'
             })
 
             .when('/behaviour', {
-                templateUrl: 'pages/behaviour.html'
+                templateUrl: 'pages/behaviour.html',
+                controller: 'behaviourController'
             })
 
             .when('/quality', {
-                templateUrl: 'pages/quality.html'
+                templateUrl: 'pages/quality.html',
+                controller: 'qualityController'
             })
 
             .when('/response', {
-                templateUrl: 'pages/response.html'
+                templateUrl: 'pages/response.html',
+                controller: 'responseController'
             })
 
             .when('/thankyou', {
-                templateUrl: 'pages/thanks.html'
+                templateUrl: 'pages/thanks.html',
+                controller: 'mainController'
             })
     }]);
 });
