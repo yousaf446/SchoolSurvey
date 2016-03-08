@@ -5,11 +5,11 @@ define([
     ],
     function() {
         var coreModule = angular.module('coreModule');
-        coreModule.controller('personalController', ['$scope', '$window', 'progressService', 'questionService', 'roleService',
-            function($scope, $window, progressService, questionService, roleService) {
+        coreModule.controller('personalController', ['$scope', 'progressService', 'questionService', 'roleService',
+            function($scope, progressService, questionService, roleService) {
 
             if(roleService.getRole() == "") {
-                $window.location.href = '#/role';
+                location.href = '#/role';
             }
             $('html, body').animate({'scrollTop': $(".progress-bar").offset().top-100}, 500);
             $scope.options = [

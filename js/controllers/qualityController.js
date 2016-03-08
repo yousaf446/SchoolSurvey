@@ -5,11 +5,11 @@ define([
     ],
     function() {
         var coreModule = angular.module('coreModule');
-        coreModule.controller('qualityController', ['$scope', '$window', 'progressService', 'qualityService', 'questionService',
-            function($scope, $window, progressService, qualityService, questionService) {
+        coreModule.controller('qualityController', ['$scope', 'progressService', 'qualityService', 'questionService',
+            function($scope, progressService, qualityService, questionService) {
 
             if(questionService.getBehaviourQuestion() == "") {
-                $window.location.href = '#/behaviour';
+                location.href = '#/behaviour';
             }
             $('html, body').animate({'scrollTop': $(".progress-bar").offset().top-100}, 500);
             $scope.progress = 15;
