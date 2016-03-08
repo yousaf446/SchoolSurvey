@@ -63,7 +63,5 @@ define([
                 }
             });
         }
-        $scope.progress = progressService.getProgress($scope.progress);
-        console.log($scope.progress);
     }]);
 });

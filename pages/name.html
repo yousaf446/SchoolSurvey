@@ -1,9 +1,9 @@
 <div align="center">
-    <form name="nameForm" action="#/school" method="POST">
+    <form name="nameForm">
         <div class="form-group">
             <label>Your Name</label>
             <input type="text" class="form-control" ng-model="teacher" name="teacher" required placeholder="Please Enter Your Name">
         </div>
-    <input type="submit" class="btn btn-danger" value=">>" />
+        <a href="#/school" class="btn btn-danger" ng-hide="!nameForm.$valid" > >> </a>
     </form>
 </div>

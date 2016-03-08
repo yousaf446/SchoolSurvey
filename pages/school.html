@@ -1,9 +1,9 @@
 <div align="center">
-    <form name="schoolForm" action="#/role" method="POST">
+    <form name="schoolForm">
         <div class="form-group">
             <label>Your School</label>
-            <input type="text" class="form-control" ng-model="school" name="school" id="school" required placeholder="Please Enter Your School">
+            <input type="text" class="form-control" ng-change="getSuggestions()" ng-model="school" name="school" id="school" required placeholder="Please Enter Your School">
         </div>
-        <input type="submit" class="btn btn-danger" value=">>" />
+        <a href="#/role" class="btn btn-danger" ng-show="schooled" > >> </a>
     </form>
 </div>

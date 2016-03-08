@@ -1,5 +1,6 @@
 define(function() {
     return [
+        'js/controllers/homeController',
         'js/controllers/mainController',
         'js/controllers/nameController',
         'js/controllers/schoolController',
