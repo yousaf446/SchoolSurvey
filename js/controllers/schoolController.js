@@ -6,9 +6,9 @@ define([
     function() {
         var coreModule = angular.module('coreModule');
         coreModule.controller('schoolController', ['$scope', 'progressService', 'schoolService', 'teacherService',
-            function($scope, $window, progressService, schoolService, teacherService) {
+            function($scope, progressService, schoolService, teacherService) {
             $('html, body').animate({'scrollTop': $(".progress-bar").offset().top-100}, 500);
-            if(teacherService.getTeacher() == "") {
+            if(teacherService.getTeacher() == "" || teacherService.getTeacher() == undefined) {
                 location.href = '#/name';
             }
             $scope.progress = 10;
