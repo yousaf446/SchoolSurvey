@@ -1,11 +1,16 @@
 define([
         'js/services/progressService',
-        'js/services/schoolService'
+        'js/services/schoolService',
+        'js/services/teacherService'
     ],
     function() {
         var coreModule = angular.module('coreModule');
-        coreModule.controller('schoolController', ['$scope', 'progressService', 'schoolService', function($scope, progressService, schoolService) {
+        coreModule.controller('schoolController', ['$scope', '$window', 'progressService', 'schoolService', 'teacherService',
+            function($scope, $window, progressService, schoolService, teacherService) {
             $('html, body').animate({'scrollTop': $(".progress-bar").offset().top-100}, 500);
+            if(teacherService.getTeacher() == "") {
+                $window.location.href = '#/name';
+            }
             $scope.progress = 10;
             progressService.setProgress($scope.progress);
             progressService.getProgress();

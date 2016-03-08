@@ -4,7 +4,12 @@ define([
     ],
     function() {
         var coreModule = angular.module('coreModule');
-        coreModule.controller('behaviourController', ['$scope', 'progressService', 'questionService' , function($scope, progressService, questionService) {
+        coreModule.controller('behaviourController', ['$scope', '$window', 'progressService', 'questionService',
+            function($scope, $window, progressService, questionService) {
+
+            if(questionService.getPersonalQuestion() == "") {
+                $window.location.href = '#/personal';
+            }
             $('html, body').animate({'scrollTop': $(".progress-bar").offset().top-100}, 500);
             $scope.options = [
                 {

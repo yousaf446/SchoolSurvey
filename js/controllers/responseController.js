@@ -9,9 +9,13 @@ define([
     ],
     function() {
         var coreModule = angular.module('coreModule');
-        coreModule.controller('responseController', ['$scope', 'progressService', 'teacherService', 'schoolService',
-            'roleService', 'questionService', 'qualityService', 'reviewService', function($scope, progressService, teacherService, schoolService,
+        coreModule.controller('responseController', ['$scope', '$window', 'progressService', 'teacherService', 'schoolService',
+            'roleService', 'questionService', 'qualityService', 'reviewService', function($scope, $window, progressService, teacherService, schoolService,
                                                                          roleService, questionService, qualityService, reviewService) {
+
+                if(qualityService.getQuality() == "") {
+                    $window.location.href = '#/quality';
+                }
                 $('html, body').animate({'scrollTop': $(".progress-bar").offset().top-100}, 500);
             $scope.progress = 10;
             progressService.setProgress($scope.progress);

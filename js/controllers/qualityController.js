@@ -1,10 +1,16 @@
 define([
         'js/services/progressService',
-        'js/services/qualityService'
+        'js/services/qualityService',
+        'js/services/questionService'
     ],
     function() {
         var coreModule = angular.module('coreModule');
-        coreModule.controller('qualityController', ['$scope', 'progressService', 'qualityService', function($scope, progressService, qualityService) {
+        coreModule.controller('qualityController', ['$scope', '$window', 'progressService', 'qualityService', 'questionService',
+            function($scope, $window, progressService, qualityService, questionService) {
+
+            if(questionService.getBehaviourQuestion() == "") {
+                $window.location.href = '#/behaviour';
+            }
             $('html, body').animate({'scrollTop': $(".progress-bar").offset().top-100}, 500);
             $scope.progress = 15;
             progressService.setProgress($scope.progress);

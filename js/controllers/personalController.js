@@ -1,10 +1,16 @@
 define([
         'js/services/progressService',
-        'js/services/questionService'
+        'js/services/questionService',
+        'js/services/roleService'
     ],
     function() {
         var coreModule = angular.module('coreModule');
-        coreModule.controller('personalController', ['$scope', 'progressService', 'questionService', function($scope, progressService, questionService) {
+        coreModule.controller('personalController', ['$scope', '$window', 'progressService', 'questionService', 'roleService',
+            function($scope, $window, progressService, questionService, roleService) {
+
+            if(roleService.getRole() == "") {
+                $window.location.href = '#/role';
+            }
             $('html, body').animate({'scrollTop': $(".progress-bar").offset().top-100}, 500);
             $scope.options = [
                 {

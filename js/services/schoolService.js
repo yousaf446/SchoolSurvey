@@ -1,7 +1,7 @@
 define(function() {
     var coreModule = angular.module('coreModule');
     coreModule.service('schoolService', ['$http', '$q', function($http, $q) {
-        this.school = 0;
+        this.school = "";
         this.setSchool = function (school) {
             this.school = school;
         };
