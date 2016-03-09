@@ -53,5 +53,31 @@ define(function() {
                 return deffered.promise;
             });
         };
+
+        this.getReview = function() {
+            var deffered = $q.defer();
+
+            return $http.get('api/api.php?key=get_reviews').then(function successCallback(response) {
+                deffered.resolve(response);
+                return deffered.promise;
+
+            }, function errorCallback(response) {
+                deffered.reject(response);
+                return deffered.promise;
+            });
+        };
+
+        this.getReviewDetail = function(school) {
+            var deffered = $q.defer();
+
+            return $http.get('api/api.php?key=review_detail&school='+school).then(function successCallback(response) {
+                deffered.resolve(response);
+                return deffered.promise;
+
+            }, function errorCallback(response) {
+                deffered.reject(response);
+                return deffered.promise;
+            });
+        };
     }]);
 });

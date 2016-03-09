@@ -57,5 +57,15 @@ define([
                 templateUrl: 'pages/thanks.html',
                 controller: 'mainController'
             })
+
+            .when('/reviews', {
+                templateUrl: 'pages/reviews.html',
+                controller: 'reviewController'
+            })
+
+            .when('/reviews/:school', {
+                templateUrl: 'pages/reviewDetail.html',
+                controller: 'reviewDetailController'
+            })
     }]);
 });

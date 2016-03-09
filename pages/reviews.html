@@ -1,0 +1,10 @@
+<div ng-repeat="review in reviews" class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ review.name }}</h3>
+    </div>
+    <div class="panel-body">
+        <label> No of reviews: {{ review.review_count }} </label>
+        <br/>
+        <a href="#/reviews/{{ review.school }}" class="btn btn-primary">Check Reviews</a>
+    </div>
+</div>

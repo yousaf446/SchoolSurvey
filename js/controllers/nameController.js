@@ -8,6 +8,10 @@ define([
             $scope.$watch('teacher', function() {
                 teacherService.setTeacher($scope.teacher);
             });
+            $scope.progress = 0;
+            progressService.progress = 0;
+            progressService.setProgress($scope.progress);
+            progressService.getProgress();
             $('html, body').animate({'scrollTop': $(".progress-bar").offset().top-100}, 500);
         }]);
     });

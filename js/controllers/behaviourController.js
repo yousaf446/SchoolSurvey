@@ -42,19 +42,9 @@ define([
             progressService.getProgress();
 
             $scope.answer = {
-                q41: "",
-                q42: "",
-                q43: "",
-                q44: "",
-                q45: "",
-                q51: "",
-                q52: "",
-                q53: "",
-                q54: "",
-                q61: "",
-                q62: "",
-                q63: "",
-                q64: "",
+                s4: {q1: "", q2: "", q3: "", q4: "", q5: ""},
+                s5: {q1: "", q2: "", q3: "", q4: ""},
+                s6: {q1: "", q2: "", q3: "", q4: ""},
             }
 
             $scope.saveAnswer = function() {

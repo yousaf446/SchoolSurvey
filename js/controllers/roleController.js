@@ -17,17 +17,16 @@ define([
             progressService.getProgress();
 
             $scope.role = {
-                ft: false,
-                pt: false,
-                ta: false,
-                sm: false,
-                hod: false,
-                mentor: false,
-                admin: false,
-                prem: false,
-                other: false,
-                otherRole: "",
-                na: false
+                ft: { status: false, name: 'Teacher (Full Time)'},
+                pt: { status: false, name: 'Teacher (part Time)'},
+                ta: { status: false, name: 'Teacher (Assistant)'},
+                sm: { status: false, name: 'Senior Management'},
+                hod: { status: false, name: 'Head of Year / Department / Faculty'},
+                mentor: { status: false, name: 'Mentor'},
+                admin: { status: false, name: 'Administrative'},
+                prem: { status: false, name: 'Premises'},
+                other: { status: false, name: ''},
+                na: { status: false, name: "I don't work at a school"}
             }
 
             $scope.saveRole = function() {

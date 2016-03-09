@@ -48,3 +48,56 @@ function addResponse($id, $email, $response) {
         return false;
     }
 }
+function getReviews() {
+    global $con;
+    $sql = "SELECT school.*, review.*, count(review.school) as review_count FROM ".DB_DATABASE.".".DB_TABLE_REVIEW." review".chr(10);
+    $sql .= "LEFT OUTER JOIN ".DB_DATABASE.".".DB_TABLE_SCHOOL." school".chr(10);
+    $sql .= "ON review.school = school.id".chr(10);
+    $sql .= "GROUP BY review.school".chr(10);
+    //$sql .= "HAVING review_count > 3".chr(10);
+    if ($result = $con->query($sql)) {
+        $aData = array();
+        while($row = $result->fetch_array())
+            $aData[] = $row;
+        return $aData;
+    } else {
+        return false;
+    }
+}
+
+function getReviewDetail($school) {
+    global $con;
+    $sql = "SELECT school.*, review.* FROM ".DB_DATABASE.".".DB_TABLE_REVIEW." review".chr(10);
+    $sql .= "JOIN ".DB_DATABASE.".".DB_TABLE_SCHOOL." school".chr(10);
+    $sql .= "ON review.school = school.id".chr(10);
+    $sql .= "WHERE review.school = $school".chr(10);
+    if ($result = $con->query($sql)) {
+        $aData = array();
+        while($row = $result->fetch_array())
+            $aData[] = $row;
+        $filteredData = filterDetail($aData);
+        return $aData;
+    } else {
+        return false;
+    }
+}
+
+function filterDetail($aData) {
+    $aFilter = array();
+    foreach($aData as $thisReview) {
+        $filter  = array();
+        $filter['teacher'] = $thisReview['teacher'];
+        $filter['school'] = $thisReview['name'];
+        $filter['personal'] = filterRole($thisReview['role']);
+        $filter['personal'] = filterAnswer($thisReview['personal']);
+        $filter['personal'] = filterAnswer($thisReview['personal']);
+    }
+
+}
+
+/*function filterRole($role) {
+    $roleArray = array
+    foreach($role as $thisRole) {
+        if($thisRole)
+    }
+}*/

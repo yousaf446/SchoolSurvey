@@ -17,7 +17,7 @@ define([
             $scope.schooled = false;
 
             $scope.getSuggestions = function() {
-                if($scope.school.length > 4) {
+                if($scope.school.length > 2) {
                     schoolService.getAllSchool($scope.school).then(function (response) {
 
                         $scope.status = response.data.status;

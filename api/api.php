@@ -50,6 +50,28 @@ switch($key) {
             $aResult['data'] = 'Internal Server Error';
         }
         break;
+    case 'get_reviews':
+        $review = getReviews();
+        if($review) {
+            $aResult['status'] = true;
+            $aResult['data'] = $review;
+        } else {
+            $aResult['status'] = false;
+            $aResult['data'] = 'No Review Found';
+        }
+    break;
+
+    case 'review_detail':
+        $school = (isset($_GET['school']) && !empty($_GET['school'])) ? $_GET['school'] : "";
+        $review = getReviewDetail($school);
+        if($review) {
+            $aResult['status'] = true;
+            $aResult['data'] = $review;
+        } else {
+            $aResult['status'] = false;
+            $aResult['data'] = 'No Review Found';
+        }
+        break;
 }
 
 echo json_encode($aResult);

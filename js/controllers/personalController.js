@@ -42,18 +42,11 @@ define([
             progressService.setProgress($scope.progress);
             progressService.getProgress();
 
-            $scope.answer = {
-                q11: "",
-                q12: "",
-                q13: "",
-                q21: "",
-                q22: "",
-                q23: "",
-                q24: "",
-                q31: "",
-                q32: "",
-                q33: "",
-            }
+                $scope.answer = {
+                    s1: {q1: "", q2: "", q3: ""},
+                    s2: {q1: "", q2: "", q3: ""},
+                    s3: {q1: "", q2: "", q3: ""},
+                }
 
             $scope.saveAnswer = function() {
                 questionService.setPersonalQuestion($scope.answer);
