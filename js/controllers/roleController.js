@@ -26,8 +26,8 @@ define([
                 admin: { status: false, name: 'Administrative'},
                 prem: { status: false, name: 'Premises'},
                 other: { status: false, name: ''},
-                na: { status: false, name: "I don't work at a school"}
-            }
+                na: { status: false, name: "I dont work at a school"}
+            };
 
             $scope.saveRole = function() {
                 roleService.setRole($scope.role);

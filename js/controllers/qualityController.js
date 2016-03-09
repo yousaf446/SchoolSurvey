@@ -16,32 +16,32 @@ define([
             progressService.setProgress($scope.progress);
             progressService.getProgress();
 
-            $scope.quality = {
-                care: false,
-                trust: false,
-                efficient: false,
-                relax: false,
-                appreciate: false,
-                religion: false,
-                forward: false,
-                unappreciate: false,
-                poor: false,
-                pressure: false,
-                inefficient: false,
-                uncare: false,
-                friend: false,
-                communal: false,
-                old: false,
-                paranoid: false,
-                untrust: false,
-                exam: false,
-                support: false,
-                academic: false,
-                well: false,
-                bully: false,
-                round: false,
-                inclusive: false
-            }
+            $scope.quality = [
+                {status: false, name: "Caring"},
+                {status: false, name: "Trusting"},
+                {status: false, name: "Efficient"},
+                {status: false, name: "Relaxed"},
+                {status: false, name: "Appreciative"},
+                {status: false, name: "Religious"},
+                {status: false, name: "Forward Thinking"},
+                {status: false, name: "Unappreciative"},
+                {status: false, name: "Poorly Run"},
+                {status: false, name: "Pressurised"},
+                {status: false, name: "Inefficient"},
+                {status: false, name: "Uncaring"},
+                {status: false, name: "Friendly"},
+                {status: false, name: "Communal"},
+                {status: false, name: "Old Fashioned"},
+                {status: false, name: "Paranoid"},
+                {status: false, name: "Untrusting"},
+                {status: false, name: "Exam Focused"},
+                {status: false, name: "Supportive"},
+                {status: false, name: "Academic"},
+                {status: false, name: "Well Run"},
+                {status: false, name: "Bullying"},
+                {status: false, name: "Rounded Education"},
+                {status: false, name: "Inclusive"}
+            ];
             $scope.quantity = 0;
             $scope.checkQuantity = function(element) {
                   if(element)  {

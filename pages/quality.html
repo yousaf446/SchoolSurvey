@@ -5,53 +5,15 @@
     Which <strong>three </strong>words best describe your school?
 </h4>
 <ul class="list-unstyled">
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.care=false" ng-class="quality.care ? 'btn-danger' : 'btn-default'" ng-click="quality.care = checkQuantity(quality.care)">Caring</button></li></div>
+    <div class="form-group" ng-repeat="q in quality">
+        <li>
+            <button class="btn btn-lg btn-block" ng-init="q.status=false"
+                    ng-class="q.status ? 'btn-danger' : 'btn-default'"
+                    ng-click="q.status = checkQuantity(q.status)">{{ q.name }}
+            </button>
+        </li>
+    </div>
 
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.trust=false" ng-class="quality.trust ? 'btn-danger' : 'btn-default'" ng-click="quality.trust = checkQuantity(quality.trust)">Trusting</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.efficient=false" ng-class="quality.efficient ? 'btn-danger' : 'btn-default'" ng-click="quality.efficient = checkQuantity(quality.efficient)">Efficient</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.relax=false" ng-class="quality.relax ? 'btn-danger' : 'btn-default'" ng-click="quality.relax = checkQuantity(quality.relax)">Relaxed</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.appreciate=false" ng-class="quality.appreciate ? 'btn-danger' : 'btn-default'" ng-click="quality.appreciate = checkQuantity(quality.appreciate)">Appreciative</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.religion=false" ng-class="quality.religion ? 'btn-danger' : 'btn-default'" ng-click="quality.religion = checkQuantity(quality.religion)">Religious</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.forward=false" ng-class="quality.forward ? 'btn-danger' : 'btn-default'" ng-click="quality.forward = checkQuantity(quality.forward)">Forward Thinking</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.unappreciate=false" ng-class="quality.unappreciate ? 'btn-danger' : 'btn-default'" ng-click="quality.unappreciate = checkQuantity(quality.unappreciate)">Unappreciative</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.poor=false" ng-class="quality.poor ? 'btn-danger' : 'btn-default'" ng-click="quality.poor = checkQuantity(quality.poor)">Poorly Run</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.pressure=false" ng-class="quality.pressure ? 'btn-danger' : 'btn-default'" ng-click="quality.pressure = checkQuantity(quality.pressure)">Pressurised</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.inefficient=false" ng-class="quality.inefficient ? 'btn-danger' : 'btn-default'" ng-click="quality.inefficient = checkQuantity(quality.inefficient)">Inefficient</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.uncare=false" ng-class="quality.uncare ? 'btn-danger' : 'btn-default'" ng-click="quality.uncare = checkQuantity(quality.uncare)">Uncaring</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.friend=false" ng-class="quality.friend ? 'btn-danger' : 'btn-default'" ng-click="quality.friend = checkQuantity(quality.friend)">Friendly</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.communal=false" ng-class="quality.communal ? 'btn-danger' : 'btn-default'" ng-click="quality.communal = checkQuantity(quality.communal)">Communal</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.old=false" ng-class="quality.old ? 'btn-danger' : 'btn-default'" ng-click="quality.old = checkQuantity(quality.old)">Old Fashioned</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.paranoid=false" ng-class="quality.paranoid ? 'btn-danger' : 'btn-default'" ng-click="quality.paranoid = checkQuantity(quality.paranoid)">Paranoid</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.untrust=false" ng-class="quality.untrust ? 'btn-danger' : 'btn-default'" ng-click="quality.untrust = checkQuantity(quality.untrust)">Untrusting</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.exam=false" ng-class="quality.exam ? 'btn-danger' : 'btn-default'" ng-click="quality.exam = checkQuantity(quality.exam)">Exam Focused</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.support=false" ng-class="quality.support ? 'btn-danger' : 'btn-default'" ng-click="quality.support = checkQuantity(quality.support)">Supportive</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.academic=false" ng-class="quality.academic ? 'btn-danger' : 'btn-default'" ng-click="quality.academic = checkQuantity(quality.academic)">Academic</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.well=false" ng-class="quality.well ? 'btn-danger' : 'btn-default'" ng-click="quality.well = checkQuantity(quality.well)">Well Run</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.bully=false" ng-class="quality.bully ? 'btn-danger' : 'btn-default'" ng-click="quality.bully = checkQuantity(quality.bully)">Bullying</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.round=false" ng-class="quality.round ? 'btn-danger' : 'btn-default'" ng-click="quality.round = checkQuantity(quality.round)">Rounded Education</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="quality.inclusive=false" ng-class="quality.inclusive ? 'btn-danger' : 'btn-default'" ng-click="quality.inclusive = checkQuantity(quality.inclusive)">Inclusive</button></li></div>
 
     <hr/>
 

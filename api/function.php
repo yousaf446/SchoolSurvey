@@ -76,7 +76,7 @@ function getReviewDetail($school) {
         while($row = $result->fetch_array())
             $aData[] = $row;
         $filteredData = filterDetail($aData);
-        return $aData;
+        return $filteredData;
     } else {
         return false;
     }
@@ -88,16 +88,47 @@ function filterDetail($aData) {
         $filter  = array();
         $filter['teacher'] = $thisReview['teacher'];
         $filter['school'] = $thisReview['name'];
-        $filter['personal'] = filterRole($thisReview['role']);
-        $filter['personal'] = filterAnswer($thisReview['personal']);
-        $filter['personal'] = filterAnswer($thisReview['personal']);
+        $filter['role'] = filterRole(json_decode($thisReview['role']));
+        $filter['personal'] = filterAnswer(json_decode($thisReview['personal']));
+        $filter['behaviour'] = filterAnswer(json_decode($thisReview['behaviour']));
+        $filter['quality'] = filterQuality(json_decode($thisReview['quality']));
+        $filter['workhour'] = $thisReview['workhour'];
+        $filter['email'] = $thisReview['email'];
+        $filter['response'] = $thisReview['response'];
+        $aFilter[] = $filter;
     }
-
+    return $aFilter;
 }
 
-/*function filterRole($role) {
-    $roleArray = array
+function filterRole($role) {
+    $roleArray = array();
     foreach($role as $thisRole) {
-        if($thisRole)
+        if($thisRole->status) {
+            $roleArray[] = $thisRole->name;
+        }
     }
-}*/
+    return implode(',', $roleArray);
+}
+
+function filterAnswer($answer) {
+    $answerArray = array();
+    foreach($answer as $section) {
+        $count = 0; $total = 0;
+        foreach($section as $question) {
+            $total = $total + $question->a;
+            $count++;
+        }
+        $answerArray[] = intval($total/$count);
+    }
+    return implode(',', $answerArray);
+}
+
+function filterQuality($quality) {
+    $qualityArray = array();
+    foreach($quality as $thisQuality) {
+        if($thisQuality->status) {
+            $qualityArray[] = $thisQuality->name;
+        }
+    }
+    return implode(',', $qualityArray);
+}
