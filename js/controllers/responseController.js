@@ -20,16 +20,18 @@ define([
             $scope.progress = 10;
             progressService.setProgress($scope.progress);
             progressService.getProgress();
+                if(!reviewService.reviewSuccess) {
+                    reviewService.addReview(teacherService.getTeacher(), schoolService.getSchool(), roleService.getRole(), questionService.getPersonalQuestion(),
+                        questionService.getBehaviourQuestion(), qualityService.getQuality(), qualityService.getWorkhour()).then(function (response) {
 
-            reviewService.addReview(teacherService.getTeacher(), schoolService.getSchool(), roleService.getRole(), questionService.getPersonalQuestion(),
-                                    questionService.getBehaviourQuestion(), qualityService.getQuality(), qualityService.getWorkhour()). then(function (response) {
+                        $scope.status = response.data.status;
+                        $scope.reviewID = response.data.data;
+                        reviewService.reviewSuccess = true;
+                    }, function (response) {
+                        $scope.status = response.data.status;
 
-                    $scope.status = response.data.status;
-                    $scope.reviewID = response.data.data;
-                }, function (response) {
-                    $scope.status = response.data.status;
-
-                });
+                    });
+                }
             $scope.opinion = "";
             $scope.addResponse = function() {
                 reviewService.addResponse($scope.reviewID, $scope.email, $scope.opinion).then(function (response) {

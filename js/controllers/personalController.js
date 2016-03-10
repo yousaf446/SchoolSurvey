@@ -15,11 +15,11 @@ define([
             $scope.options = [
                 {
                     name: 'Strongly agree',
-                    value: 1,
+                    value: 5,
                 },
                 {
                     name: 'Agree',
-                    value: 2,
+                    value: 4,
                 },
                 {
                     name: 'Neither agree nor disagree',
@@ -27,11 +27,11 @@ define([
                 },
                 {
                     name: 'Disagree',
-                    value: 4,
+                    value: 2,
                 },
                 {
                     name: 'Strongly disagree',
-                    value: 5,
+                    value: 1,
                 },
                 {
                     name: 'N/A',

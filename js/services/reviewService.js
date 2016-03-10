@@ -1,7 +1,7 @@
 define(function() {
     var coreModule = angular.module('coreModule');
     coreModule.service('reviewService', ['$http', '$q', function($http, $q) {
-
+        this.reviewSuccess = false;
         this.addReview = function(teacher, school, role, personal, behaviour, quality, workhour) {
             var deffered = $q.defer();
             var data = {
