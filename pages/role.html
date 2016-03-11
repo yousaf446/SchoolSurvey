@@ -1,27 +1,14 @@
 <div style="text-align: center">
 <h4><strong>What is your role at your school?</strong><span>(can choose more than one)</span></h4>
 <ul class="list-unstyled">
-    <div class="form-group"><li><button class="btn btn-lg btn-block" ng-init="role.ft.status=false" ng-class="role.ft.status ? 'btn-danger' : 'btn-default'" ng-click="role.ft.status = (role.ft.status == true ? false : true)">{{ role.ft.name}}</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block" ng-init="role.pt.status=false" ng-class="role.pt.status ? 'btn-danger' : 'btn-default'" ng-click="role.pt.status = (role.pt.status == true ? false : true)">{{ role.pt.name}}</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block" ng-init="role.ta.status=false" ng-class="role.ta.status ? 'btn-danger' : 'btn-default'" ng-click="role.ta.status = (role.ta.status == true ? false : true)">{{ role.ta.name}}</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block" ng-init="role.sm.status=false" ng-class="role.sm.status ? 'btn-danger' : 'btn-default'" ng-click="role.sm.status = (role.sm.status == true ? false : true)">{{ role.sm.name}}</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="role.hod.status=false" ng-class="role.hod.status ? 'btn-danger' : 'btn-default'" ng-click="role.hod.status = (role.hod.status == true ? false : true)">{{ role.hod.name}}</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="role.mentor.status=false" ng-class="role.mentor.status ? 'btn-danger' : 'btn-default'" ng-click="role.mentor.status = (role.mentor.status == true ? false : true)">{{ role.mentor.name}}</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="role.admin.status=false" ng-class="role.admin.status ? 'btn-danger' : 'btn-default'" ng-click="role.admin.status = (role.admin.status == true ? false : true)">{{ role.admin.name}}</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="role.prem.status=false" ng-class="role.prem.status ? 'btn-danger' : 'btn-default'" ng-click="role.prem.status = (role.prem.status == true ? false : true)">{{ role.prem.name}}</button></li></div>
-
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="role.other.status=false" ng-class="role.other.status ? 'btn-danger' : 'btn-default'" ng-click="role.other.status = (role.other.status == true ? false : true)">Other</button></li>
-    <input type="text" class="form-control" ng-model="role.other.name" /></div>
-
-    <div class="form-group"><li><button class="btn btn-default btn-lg btn-block"  ng-init="role.na.status=false" ng-class="role.na.status ? 'btn-danger' : 'btn-default'" ng-click="role.na.status = (role.na.status == true ? false : true)">{{ role.na.name}}</button></li></div>
-
-    <a href="#/personal" class="btn btn-danger" ng-click="saveRole()"> >> </a>
+    <div class="form-group" ng-repeat="r in role">
+        <li>
+            <button class="btn btn-lg btn-block" ng-init="r.status=false" ng-class="r.status ? 'btn-danger' : 'btn-default'"
+                    ng-click="r.status = (r.status == true ? false : true)"> {{ r.name || 'Other'}}
+            </button>
+        </li>
+        <input type="text" class="form-control" ng-model="r.name" ng-show="r.name == ''" />
+    </div>
 </ul>
+<a href="#/personal" class="btn btn-danger" ng-click="saveRole()"> >> </a>
 </div>
